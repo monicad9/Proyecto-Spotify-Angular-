@@ -26,7 +26,8 @@ export class ArtistComponent implements OnInit {
         $(".pager").hide(); 
         $(".search").hide();
         $(".fail").hide();
-        $("footer").css("margin-top","30%");
+        $("footer").css("position","fixed");
+        
     }
 
     searchFor(){
@@ -42,7 +43,8 @@ export class ArtistComponent implements OnInit {
 
                     $(".pager").show(); 
                     $(".search").show();
-                    $("footer").css("margin-top","auto"); 
+                    $("footer").css("position","relative");
+                    
             }
 
             else{
@@ -50,7 +52,8 @@ export class ArtistComponent implements OnInit {
                 $(".fail").show();
                 $(".fail").delay(1500).fadeOut(); 
                 $(".pager").hide();
-                $("footer").css("margin-top","30%");    
+                $("footer").css("position","fixed");
+                  
             }
         });
     }

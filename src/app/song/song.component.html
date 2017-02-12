@@ -1,4 +1,4 @@
-<img class="fondo" src="../../img/fondosong.jpg">
+<!-- <img class="fondo" src="../../img/fondosong.jpg"> -->
 
 <div class="row">
 	<div class="col-lg-6">
@@ -13,23 +13,28 @@
 
 
 <div class="search">Results for: {{cont_input}}</div>
-<div class="fail">No hay datos para esa búsqueda</div>
+<div class="fail">There aren't any results</div>
 
 
-<div class="container">
-   
-        <div class="pager" *ngFor="let datos of array_datos[0]">
-
-        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contenedor">
-            <li ><h4 class="glyphicon glyphicon-music"></h4><h4> {{datos.name}}</h4></li>
-            <a  href={{datos.preview_url}} target="_blank" class="bn btn btn-default glyphicon glyphicon-headphones "> Play track</a>
-
-
-          </div>       	
-           
-      </div>
-
+<div class="container">        
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let datos of array_datos[0]">
+        <td class="glyphicon glyphicon-music">{{datos.name}}</td>
+        <td>{{datos.artists[0].name}}</td>
+        <td><a  href={{datos.preview_url}} target="_blank" class="bn btn btn-default glyphicon glyphicon-headphones "> Play track</a></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
 
 
 <ul class="pager">

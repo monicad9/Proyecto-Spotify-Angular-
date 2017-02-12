@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../router.animations';
+declare var $:any;
 
 @Component({
 	selector: 'app-home',
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		$("footer").css("position","relative");
 	}
 
 }
