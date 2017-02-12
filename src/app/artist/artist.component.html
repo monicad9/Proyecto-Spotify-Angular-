@@ -1,0 +1,60 @@
+<img class="fondo" src="../../img/fondoartist.jpg">
+
+<div class="row">
+	<div class="col-lg-6">
+         <div class="input-group">
+            <input type="text" class="form-control" value="ju" [(ngModel)]='cont_input'>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" (click)='searchFor()' [disabled] ="cont_input.trim().length<1">Search artist</button>
+          </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="search">Results for: {{cont_input}}</div>
+<div class="fail">No hay datos para esa búsqueda</div>
+
+
+<!-- FILTRAR DATOS -->
+    
+<!--     <span id="filtro">Filtrar por popularidad {{ sliderValue }}</span>
+   <p><input id="range" type="range" min="0" max="80" [(ngModel)]="sliderValue"/>  -->
+     
+<!--     <ul>
+      <li *ngFor="let popul of array_popularity">
+        
+       {{ popul.popularity }}
+      </li>
+    </ul>
+ -->
+
+
+
+<!-- .........................................- -->
+<div class="wrapper">
+    <div *ngFor="let datos of array_datos[0]">
+        
+        <div class="container">
+            
+           <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <a  href="https://open.spotify.com/artist/{{datos.id}}" target="a_blank"><img *ngIf="datos.images.length>0" src={{datos.images[0].url}}></a>
+                <img *ngIf="datos.images.length==0"  src="../../img/notfound.jpg">
+
+                <div class="middle">
+                    <div class="text">{{datos.name}}{{datos.popularity}}
+                </div>
+
+            </div> 
+
+        </div>
+
+    </div>
+</div> 
+
+<ul class="pager">
+
+    <li><a (click)="previous()">&larr; Previous</a></li>
+    <li><a (click)="next()">Next &rarr;</a></li>
+</ul>
+

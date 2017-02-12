@@ -1,0 +1,39 @@
+<img class="fondo" src="../../img/fondosong.jpg">
+
+<div class="row">
+	<div class="col-lg-6">
+    	<div class="input-group">
+      		<input type="text" class="form-control" [(ngModel)]='cont_input'>
+      		<span class="input-group-btn">
+        		<button class="btn btn-default" type="button" (click)='searchFor()' [disabled] ="cont_input.trim().length<1">Search Song</button>
+     		 </span>
+    	</div>
+ 	</div>
+</div>
+
+
+<div class="search">Results for: {{cont_input}}</div>
+<div class="fail">No hay datos para esa búsqueda</div>
+
+
+<div class="container">
+   
+        <div class="pager" *ngFor="let datos of array_datos[0]">
+
+        	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contenedor">
+            <li ><h4 class="glyphicon glyphicon-music"></h4><h4> {{datos.name}}</h4></li>
+            <a  href={{datos.preview_url}} target="_blank" class="bn btn btn-default glyphicon glyphicon-headphones "> Play track</a>
+
+
+          </div>       	
+           
+      </div>
+
+</div>
+
+
+<ul class="pager">
+
+    <li><a (click)="previous()">&larr; Previous</a></li>
+    <li><a (click)="next()">Next &rarr;</a></li>
+</ul>

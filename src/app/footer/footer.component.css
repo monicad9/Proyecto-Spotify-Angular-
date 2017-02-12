@@ -1,0 +1,39 @@
+footer{
+    width: 100%;
+	bottom: 0;
+ 
+    background-color:#F8F8F8;
+    height: 110px;
+    padding: 20px;
+    opacity: 1;
+}
+
+#author{
+
+
+	float: left;
+	margin-left: 200px;
+}
+
+#download{
+	float: right;
+	margin-right: 200px;
+
+}
+
+li{
+	list-style: none;
+	
+}
+
+a{
+	font-size: 16px;
+}
+
+#icon{
+	max-width: 50px;
+	max-height: 50px;
+}
+
+
+
