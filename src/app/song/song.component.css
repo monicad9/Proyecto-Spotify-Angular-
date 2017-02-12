@@ -66,3 +66,13 @@ a:hover{
 .singer{
   text-align: center;
 }
+
+.glyphicon-play{
+  background: rgba(0,0,0,0);
+  border:0px;
+}
+
+.glyphicon-pause{
+  background: rgba(0,0,0,0);
+  border:0px;
+}

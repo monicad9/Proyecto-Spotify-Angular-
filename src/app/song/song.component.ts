@@ -77,4 +77,19 @@ export class SongComponent implements OnInit {
   		}	    
   	}
 
+	play( $event ) {
+	    let id = $event.currentTarget.className;
+	    let music = $('#' + id)[0];
+
+	    if ( music.paused ) {
+	      music.play();
+	    } 
+
+	    else {
+	      music.pause();
+	    }
+  	}
 }
+  
+
+

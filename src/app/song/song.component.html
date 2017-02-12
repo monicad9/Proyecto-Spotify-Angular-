@@ -1,4 +1,4 @@
-<!-- <img class="fondo" src="../../img/fondosong.jpg"> -->
+
 
 <div class="row">
 	<div class="col-lg-6">
@@ -17,22 +17,29 @@
 
 
 <div class="container">        
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Artist</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let datos of array_datos[0]">
-        <td class="glyphicon glyphicon-music">{{datos.name}}</td>
-        <td>{{datos.artists[0].name}}</td>
-        <td><a  href={{datos.preview_url}} target="_blank" class="bn btn btn-default glyphicon glyphicon-headphones "> Play track</a></td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Artist</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let datos of array_datos[0]">
+                <td class="glyphicon glyphicon-music">{{datos.name}}</td>
+                <td>{{datos.artists[0].name}}</td>
+                <td>
+                    <div [class]='datos.id' (click)="play($event)">
+                        Play track
+                        <button class="glyphicon glyphicon-play"></button>
+                        
+                        <audio [id]='datos.id'><source [src]='datos.preview_url' type="audio/mp3"></audio>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 
@@ -42,3 +49,4 @@
     <li><a (click)="previous()">&larr; Previous</a></li>
     <li><a (click)="next()">Next &rarr;</a></li>
 </ul>
+
