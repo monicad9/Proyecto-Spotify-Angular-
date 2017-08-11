@@ -22,7 +22,7 @@ import {Ng2BreadcrumbModule, BreadcrumbService} from '../../node_modules/ng2-bre
 import { ArtistPopularityPipe } from './artist-popularity.pipe';
 
 const routes: Routes = [
-  {path: 'Home' , component: HomeComponent},
+  {path: '' , component: HomeComponent},
   {path: 'Artist' , component: ArtistComponent},
   {path: 'Album' , component: AlbumComponent},
   {path: 'Song' , component: SongComponent}
